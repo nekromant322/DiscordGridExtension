@@ -1,0 +1,17 @@
+{
+    "manifest_version": 2,
+    "version": "1.4",
+    "name": "Home extension",
+    "description": "Perform actions for home usage",
+    "icons": {
+        "16": "icons/shelf-16.png",
+        "48": "icons/shelf-48.png",
+        "128": "icons/shelf-128.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [ "https://www.twitch.tv/*" ],
+            "js": [ "actions.js" ]
+        }
+    ]
+}

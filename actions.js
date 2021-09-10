@@ -4,7 +4,7 @@ const currentHostname = new URL(window.location.href).hostname;
 console.log('Hostname [' + currentHostname + ']');
 
 if (currentHostname === 'www.twitch.tv') {
-	console.log('Running script on twitch');
+    console.log('Running script on twitch');
 
     let ariaLabelText = 'Claim Bonus';
     let buttonHintText = 'Click to claim a bonus!';
@@ -45,5 +45,5 @@ if (currentHostname === 'www.twitch.tv') {
         10000
     );
 } else {
-	console.log('No script for this site');
+    console.log('No script for this site');
 }

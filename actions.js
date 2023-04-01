@@ -1,49 +1,63 @@
+// document.querySelectorAll('video')[0].requestPictureInPicture()
 
-const currentHostname = new URL(window.location.href).hostname;
 
-console.log('Hostname [' + currentHostname + ']');
+setInterval(hideBottomOverlay, 5000)
 
-if (currentHostname === 'www.twitch.tv') {
-    console.log('Running script on twitch');
-
-    let ariaLabelText = 'Claim Bonus';
-    let buttonHintText = 'Click to claim a bonus!';
-
-    if (document.documentElement.lang === 'ru-RU') {
-        ariaLabelText = 'Получить бонус';
-        buttonHintText = 'Щелкните, чтобы получить бонус!';
-    }
-
-    setInterval(
-        function(){
-            const buttonList = document.querySelectorAll(
-                'section div.chat-input div.chat-input__buttons-container div.community-points-summary button[aria-label="' + ariaLabelText + '"]'
-            );
-
-            if (buttonList.length > 0) {
-                if (buttonList.length === 1) {
-                    const buttonGetBonus = buttonList[0];
-                    const buttonHint = buttonGetBonus.nextElementSibling;
-
-                    if (buttonHint) {
-                        if (buttonHint.textContent === buttonHintText) {
-                            buttonGetBonus.click();
-                            console.log('Clicked');
-                        } else {
-                            console.error('Invalid hint text: [' + buttonHint.textContent + ']');
-                        }
-                    } else {
-                        console.error('No button hint');
-                    }
-                } else {
-                    console.error('Too much buttons [' + buttonList.length + ']');
-                }
-            } else {
-                console.log('Not Found');
-            }
-        },
-        10000
-    );
-} else {
-    console.log('No script for this site');
+function hideBottomOverlay() {
+    document.querySelectorAll('[class*=overlayBottom-]').forEach(el => el.remove())
 }
+
+
+
+
+function test() {
+    let container = findRootContainer()
+    extractVideoElementsFromContainer(container)
+
+
+}
+
+
+
+function getParticipantsNames() {
+
+}
+
+function extractVideoElementsFromContainer(container) {
+    container.querySelectorAll()
+    let childs = container.childNodes
+
+
+}
+
+function getParticipantVideoByName(name) {
+
+}
+
+function findRootContainer() {
+    return document.querySelectorAll('[class*=listItems]')[0];
+}
+
+
+
+function calculateParticipants() {
+    return document.querySelectorAll('[class*=listItems]')[0].childNodes.length
+}
+
+
+//into childs of listItems find tile
+
+
+
+
+
+
+
+
+
+// if (currentHostname === 'www.twitch.tv') {
+
+
+
+//     console.log('No script for this site');
+// }
